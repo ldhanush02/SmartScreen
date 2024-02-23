@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <h1 class="image-caption">Upload Results</h1>
+    <!-- <p>Image '../{{ filepath }}' has been successfully uploaded.</p> -->
+
+
+
+    <!-- <img src="{{ url_for('static', filename='uploads/' + 'Screenshot_2024-02-14_144746.png') }}" alt="Uploaded Image"> -->
+    <!-- <img src="../uploads/Screenshot_2024-02-14_144424.png" alt="Uploaded Image"> -->
+    <div class="border1">
+    <p class="image-caption">Uploaded File</p>
+    <p>Image '{{ filename }}' has been successfully uploaded.</p>
+    <p>Image  has been successfully uploaded in <span class="boldbody">'{{ url_for('uploaded_file', filename=filename) }}'</span> from current working Directory .</p>
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+    </div>
+    <div class="border2">
+    <p class="image-caption">Result File</p>
+    <p>Image has been successfully uploaded in <span class="boldbody">'{{ url_for('run_file', latestsubfolder=latestsubfolder , filename=filename) }}' </span> from current working Directory .</p>
+    <div class="image-container">
+    <img src="{{ url_for('run_file', latestsubfolder=latestsubfolder , filename=filename) }}" alt="Uploaded Image">
+    <a href="{{ url_for('run_file', latestsubfolder=latestsubfolder, filename=filename) }}" download=filename class="download-icon">
+      <button class="downloadbutton">Download <i class="fas fa-download"></i> </button>  
+      </a>
+    </div>
+    <!-- <img src="../{{ filepath }}" alt="Uploaded Image"> -->
+    <!-- <img src=" /uploads/Screenshot_2024-02-18_184303.png" alt="Uploaded Image"> -->
+    </div>
+    </div>
+
+
+</body>
+</html>
