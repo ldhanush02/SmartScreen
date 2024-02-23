@@ -1,9 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, send_from_directory
 from werkzeug.utils import secure_filename
 from ultralytics import YOLO
-from PIL import Image
 import os
-import io
 import cv2
 
 app = Flask(__name__)
